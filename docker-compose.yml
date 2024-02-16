@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  samurai:
+    image: samurai
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    env_file:
+      - path: ./.env
+        required: true
+    ports:
+      - 8000:8000
